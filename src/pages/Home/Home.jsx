@@ -3,7 +3,7 @@ import Background from "../../Components/Content/fondos-bg/Background";
 import AboutHome from "./FristSection/About-Home";
 import ServicesHome from "./SecundSection/Services-home";
 import PaymentInfo from "./ThreeSection/Paymen";
-import Footer from "../../Components/Footer/Footer";
+
 
 import "./Home.css"
 const Inicio = () =>{
@@ -21,9 +21,7 @@ const Inicio = () =>{
             <div className="wallet">
                 <PaymentInfo/>
             </div>
-            <div className="Footer">
-                <Footer/>
-            </div>
+           
         </section>
        
     )

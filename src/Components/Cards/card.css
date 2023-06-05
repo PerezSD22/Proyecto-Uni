@@ -68,7 +68,8 @@
 
 .card .info h1{
     margin: 0;
-    
+    font-size: 18px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.76);
 }
 
 .card .info p{

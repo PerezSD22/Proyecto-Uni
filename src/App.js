@@ -5,6 +5,7 @@ import Perfil from "./Components/Content/perfil/Perfil";
 import NavMenu from "./Components/Header/navMenu";
 import ErrorPage from "./Components/404/404";
 import Inicio from "./pages/Home/Home";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Route path='*'  element={<ErrorPage/>}/>
 
         </Routes>
-  
+        <Footer/>
       </Router>
     </div>
   );
