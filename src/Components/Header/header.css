@@ -1,0 +1,18 @@
+.logo{
+    width: 10%;
+}
+.container-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+
+.Nav{
+    color: black;
+    background: #e0e0e0;
+    box-shadow:  -20px 20px 52px #4d4a4a, 20px -20px 52px #ffffff;
+}
+.nav-item{
+    color: black;
+}
