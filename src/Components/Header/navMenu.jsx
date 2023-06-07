@@ -16,7 +16,7 @@ import "./header.css"
 import { Link } from "react-router-dom"
 
 const pages = ['Perfil', 'Servicios', 'Billetera','Sobre'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['perfil', 'Movimientos', 'Dashboard', 'Logout'];
 
 function NavMenu() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -156,7 +156,7 @@ function NavMenu() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography component={Link} to={`${setting}`} textAlign="center" sx={{textDecoration:'none', color: 'black'}}>{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>

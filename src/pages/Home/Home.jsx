@@ -1,5 +1,5 @@
 import React from "react";
-import Background from "../../Components/Content/fondos-bg/Background";
+import Background from "../../Components/fondos-bg/Background";
 import AboutHome from "./FristSection/About-Home";
 import ServicesHome from "./SecundSection/Services-home";
 import PaymentInfo from "./ThreeSection/Paymen";
