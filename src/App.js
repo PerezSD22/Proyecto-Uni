@@ -15,7 +15,7 @@ function App() {
      
         <Routes>
           <Route path='/'  element={<Inicio/>}/>
-          <Route path='/Perfil'   element={<Perfil/>}/>
+          <Route path='/Perfil'   />
           <Route path='/Servicios' />
           <Route path='/Billetera' />
           <Route path='/Sobre' />
@@ -24,7 +24,7 @@ function App() {
           <Route path='*'  element={<ErrorPage/>}/>
 
         </Routes>
-       {/*  <Footer/> */}
+        <Footer/>
       </Router>
     </div>
   );

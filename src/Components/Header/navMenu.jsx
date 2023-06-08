@@ -16,7 +16,7 @@ import "./header.css"
 import { Link } from "react-router-dom"
 
 const pages = ['Perfil', 'Servicios', 'Billetera','Sobre'];
-const settings = ['perfil', 'Movimientos', 'Dashboard', 'Logout'];
+const settings = ['Perfil', 'Movimientos', 'Dashboard', 'Logout'];
 
 function NavMenu() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
