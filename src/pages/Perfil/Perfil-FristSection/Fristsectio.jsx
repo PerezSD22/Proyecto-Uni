@@ -1,5 +1,5 @@
 import React from "react";
-import "./FirstSection.css"
+import "./FristSection.css"
 
 const FristSection = () =>{
     return <div className="frist-section-container">
