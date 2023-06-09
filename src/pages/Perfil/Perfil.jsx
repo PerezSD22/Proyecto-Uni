@@ -29,10 +29,10 @@ const Perfil = ( ) =>{
     }
   
     return  <div className="perfil-container">
-        <h3 className="Titulo">{userId.apellido}</h3>
+        <h3 className="Titulo">{user.apellido}</h3>
         <div className="container">
         
-          <FristSection  nombre={user.name} />
+          <FristSection  nombre={user.nombre} apellido={user.apellido} imagen={user.imagen}/>
         
         </div>
         <div className="container">

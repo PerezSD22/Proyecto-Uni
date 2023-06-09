@@ -2,11 +2,11 @@
     import "./FristSection.css"
 
     const FristSection = (props) =>{
-        const {nombre} = props
+        const {nombre, imagen, apellido} = props
         return <div className="frist-section-container">
             <div className="photo-info-container">
-                <img src="img/user-logo.png" alt="user-logo" />
-                <p>{nombre}</p>
+                <img src={imagen} alt="user-logo" />
+                <p>{nombre} {apellido}</p>
             </div>
             <div className="email-container">
             <p>samuel.d.perez.22@gmail.com</p>

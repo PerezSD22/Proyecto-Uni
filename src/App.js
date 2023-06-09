@@ -5,13 +5,37 @@ import Perfil from "./pages/Perfil/Perfil";
 import NavMenu from "./Components/Header/navMenu";
 import ErrorPage from "./Components/404/404";
 import Inicio from "./pages/Home/Home";
+import { useState, useEffect } from "react";
+import { getUserProfile } from "./services/Users/user-api";
+import axios from "axios";
 /* import Footer from "./Components/Footer/Footer"; */
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const authenticateUser = async () => {
+      try {
+        const response = await axios.get('https://future-vine-plier.glitch.me/obtener'); // Reemplaza con la ruta correcta hacia tu API para obtener el usuario autenticado
+        const userId = response.data.id; // Ajusta esto según la estructura de respuesta de tu API
+        const userProfile = await getUserProfile(userId);
+
+        if (userProfile) {
+          setIsAuthenticated(true);
+          setUser(userProfile);
+        }
+      } catch (error) {
+        console.error('Error al autenticar al usuario:', error);
+      }
+    };
+
+    authenticateUser();
+  }, []);
   return (
   <div className="app" > 
     <Router className="router">
-        <NavMenu/>
+        <NavMenu auntenticador={isAuthenticated} user={user}/>
      
         <Routes>
           <Route path='/'  element={<Inicio/>}/>
@@ -19,6 +43,8 @@ function App() {
           <Route path='/Servicios' />
           <Route path='/Billetera' />
           <Route path='/Sobre' />
+          <Route path='/login' />
+          <Route path='/register' />
 
 
           <Route path='*'  element={<ErrorPage/>}/>

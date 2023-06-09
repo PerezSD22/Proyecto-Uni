@@ -2,7 +2,8 @@
     margin-top: 5%;
     display: flex;
     width: 80%;
-    justify-content: space-;
+    height: 15vh;
+    justify-content: space-evenly;
     background-color: aquamarine ;
 }
 
