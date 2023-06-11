@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
 
 import Button from '@mui/material/Button';
 /* import Tooltip from '@mui/material/Tooltip'; */
@@ -14,8 +15,40 @@ import MenuItem from '@mui/material/MenuItem';
 import "./header.css"
 
 import { Link } from "react-router-dom"
-
-const pages = ['Perfil', 'Servicios', 'Billetera','Sobre'];
+const pages =[
+  {
+    item: {
+      titulo: "Servicios",
+      url:"Servicios"
+    },
+  },
+ {
+  item:{
+    titulo: "Sobre nosotros",
+    url: "Sobre"
+  }
+  },
+  {
+    item:{
+      titulo: "Pago",
+      url:"Pagos"
+    }
+  },
+]
+/* const pages = ['Perfil', 'Servicios', 'Billetera','Sobre']; */
+const options = [
+  {
+    login: {
+     btnName: "Iniciar sesion",
+     url: "login"
+    },
+  },
+ {
+  login:{
+    btnName: "Registrare",
+    url: "register"
+  }
+  },];
 /* const settings = ['Perfil', 'Movimientos', 'Dashboard', 'Logout']; */
 
 function NavMenu() {
@@ -38,7 +71,11 @@ function NavMenu() {
   };
  */
   return (
-    <AppBar color='inherit' position="fixed">
+    <AppBar color='inherit' position="fixed" sx={
+      {
+        justifyContent:"space-evenly"
+      }
+    }>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
        
@@ -89,11 +126,36 @@ function NavMenu() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page, i) => {
+                const {titulo,url} = page.item
+                return(
+                  <MenuItem key={i} onClick={handleCloseNavMenu}>
+                  <Typography  
+                  component={Link} 
+                  to={url} 
+                  textAlign="center"
+                  sx={{ my: 2, color: 'black', display: 'block', textDecoration:"none" }}
+                  >
+                    {titulo}
+                  </Typography>
                 </MenuItem>
-              ))}
+                )
+              })}
+              <Divider variant='middle' />
+              {options.map((option,i) => {
+                const {btnName, url} = option.login;
+                return(
+                <MenuItem key={i} onClick={handleCloseNavMenu}>
+                <Typography 
+                component={Link} 
+                to={url}
+                textAlign="center"
+                sx={{ my: 2, color: 'black', display: 'block', textDecoration:"none" }}
+                >
+                  {btnName}
+                </Typography>
+              </MenuItem>
+            )})}
             </Menu>
           </Box>
 
@@ -118,35 +180,42 @@ function NavMenu() {
             
           </Typography>
           <Box  sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }  }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
-                component={Link}
-                to={`/${page}`}
-                className="nav-item"
-              >
-                {page}
-              </Button>
-            ))}
+            {
+              pages.map((page, i)=>{
+                const {titulo, url} = page.item
+                return(
+                  <Button
+                  key={i}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'black', display: 'block' }}
+                  component={Link}
+                  to={`/${url}`}
+                  className="nav-item"
+                >
+                  {titulo}
+                </Button>
+                )
+              })
+            }
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Button
+          <Box sx={{ flexGrow: 1,  display: { xs: 'none', md: 'flex' } , justifyContent: 'flex-end' }}>
+          {options.map((option) => {
+            const {btnName, url} = option.login;
+            return(
+              <Button
               component={Link}
-              to="/login"
+              to={url}
               sx={{ color: 'black' }}
+
             >
-              Iniciar sesión
+              {btnName}
             </Button>
-            <Button
-              component={Link}
-              to="/register"
-              sx={{ color: 'black' }}
-            >
-              Registrarse
-            </Button>
+            )
+
+          })}
+           
+           
           </Box>
         </Toolbar>
       </Container>

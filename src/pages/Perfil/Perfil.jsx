@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 const Perfil = ( ) =>{
     const { userId } = useParams(); // Obtén el ID del usuario de la URL
-    const [user, setUser] = useState([]);
+    const [user, setUser] = useState(null);
     
     useEffect(() => {
       const fetchUser = async () => {
