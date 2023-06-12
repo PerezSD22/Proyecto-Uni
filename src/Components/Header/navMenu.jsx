@@ -18,18 +18,21 @@ import { Link } from "react-router-dom"
 const pages =[
   {
     item: {
+      id:1,
       titulo: "Servicios",
       url:"Servicios"
     },
   },
  {
   item:{
+    id:3,
     titulo: "Sobre nosotros",
     url: "Sobre"
   }
   },
   {
     item:{
+      id:4,
       titulo: "Pago",
       url:"Pagos"
     }
@@ -181,11 +184,11 @@ function NavMenu() {
           </Typography>
           <Box  sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }  }}>
             {
-              pages.map((page, i)=>{
-                const {titulo, url} = page.item
+              pages.map((page)=>{
+                const {titulo, url, id} = page.item
                 return(
                   <Button
-                  key={i}
+                  key={id}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'black', display: 'block' }}
                   component={Link}
@@ -207,6 +210,7 @@ function NavMenu() {
               component={Link}
               to={url}
               sx={{ color: 'black' }}
+              
 
             >
               {btnName}

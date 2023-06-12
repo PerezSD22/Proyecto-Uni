@@ -8,6 +8,7 @@ import Inicio from "./pages/Home/Home";
 import { useState, useEffect } from "react";
 import { getUserProfile } from "./services/Users/user-api";
 import axios from "axios";
+import LoginForm from "./pages/Login/Login";
 /* import Footer from "./Components/Footer/Footer"; */
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
           <Route path='/Servicios' />
           <Route path='/Billetera' />
           <Route path='/Sobre' />
-          <Route path='/login' />
+          <Route path='/login' element={<LoginForm/>} />
           <Route path='/register' />
 
 
