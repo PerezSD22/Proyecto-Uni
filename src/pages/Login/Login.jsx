@@ -53,6 +53,7 @@ const LoginForm = ()=>{
                     {errors.password?.type=== 'maxLength' && <small className="error-messaje" >el campo no puede tener mas de 15 caracteres</small>}
                     <label>contraseña</label>
                 </div>
+                
                 <div className="register">
                     <p>Aun no tienes cuenta? <Link className="link" to="/register">Registrate Ahora</Link> </p>
                 </div>

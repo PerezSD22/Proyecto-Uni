@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { getUserProfile } from "./services/Users/user-api";
 import axios from "axios";
 import LoginForm from "./pages/Login/Login";
+import RegisterForm from "./pages/Register/Register";
 /* import Footer from "./Components/Footer/Footer"; */
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
           <Route path='/Billetera' />
           <Route path='/Sobre' />
           <Route path='/login' element={<LoginForm/>} />
-          <Route path='/register' />
+          <Route path='/register' element={<RegisterForm/>} />
 
 
           <Route path='*'  element={<ErrorPage/>}/>
