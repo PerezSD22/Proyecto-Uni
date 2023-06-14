@@ -10,6 +10,8 @@ import { getUserProfile } from "./services/Users/user-api";
 import axios from "axios";
 import LoginForm from "./pages/Login/Login";
 import RegisterForm from "./pages/Register/Register";
+import {SessionProvider} from './context';
+
 /* import Footer from "./Components/Footer/Footer"; */
 
 function App() {
@@ -58,4 +60,8 @@ function App() {
   );
 }
 
-export default App;
+export default () => (
+  <SessionProvider>
+    <App />
+  </SessionProvider>
+);

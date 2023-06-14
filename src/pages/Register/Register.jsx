@@ -9,7 +9,20 @@ const RegisterForm = ()=>{
     const {register, handleSubmit, formState:{errors}} = useForm()
 
     const customSubmit =(data) =>{
-        console.log(data)
+        // console.log(data)
+        
+        const requestData ={
+            name: data.name,
+            lastname: data.lastname,
+            user: data.user,
+            email: data.email,
+            password: data.password,
+            imagen: data.image[0]['name'],
+            address: data.address,
+            id_rol: data.id_rol,
+        }
+
+        console.log(requestData);
     }
    
     return <Box sx={{
@@ -48,7 +61,7 @@ const RegisterForm = ()=>{
                     <div className="Form-inputs Form-inputs-register">
                     
                         
-                        <input  autocomplete="off" type="text"{...register('lastName', {required:true, minLength: 5, maxLength:35})} />
+                        <input  autocomplete="off" type="text"{...register('lastname', {required:true, minLength: 5, maxLength:35})} />
                         {errors.lastName?.type=== 'required' && <small className="error-messaje" >el campo no puede estar vacio</small>}
                         {errors.lastName?.type=== 'minLength' && <small className="error-messaje" >el campo debe tener almenos 5 caracteres</small>}
                         {errors.lastName?.type=== 'maxLength' && <small className="error-messaje" >el campo no puede tener mas de 15 caracteres</small>}
@@ -97,7 +110,7 @@ const RegisterForm = ()=>{
                     <div className="Form-inputs">
                     
                         
-                    <input  autocomplete="off" type="text"{...register('accuntType', {required:true, minLength: 5, maxLength:15})} />
+                    <input  autocomplete="off" type="text"{...register('id_rol', {required:true, minLength: 5, maxLength:15})} />
                     {errors.accuntType?.type=== 'required' && <small className="error-messaje" >el campo no puede estar vacio</small>}
                     {errors.accuntType?.type=== 'minLength' && <small className="error-messaje" >el campo debe tener almenos 5 caracteres</small>}
                     {errors.accuntType?.type=== 'maxLength' && <small className="error-messaje" >el campo no puede tener mas de 15 caracteres</small>}
@@ -106,7 +119,7 @@ const RegisterForm = ()=>{
                 <div className="Form-inputs">
                     
                         
-                    <input  autocomplete="off" type="text"{...register('image', {required:true, minLength: 5, maxLength:15})} />
+                    <input  autocomplete="off" type="file"{...register('image', {required:true, minLength: 5, maxLength:15})} />
                     {errors.image?.type=== 'required' && <small className="error-messaje" >el campo no puede estar vacio</small>}
                     {errors.image?.type=== 'minLength' && <small className="error-messaje" >el campo debe tener almenos 5 caracteres</small>}
                     {errors.image?.type=== 'maxLength' && <small className="error-messaje" >el campo no puede tener mas de 15 caracteres</small>}
