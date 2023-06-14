@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import "./Perfil.css"
 import { SessionContext } from '../../context';
-import { Margin } from '@mui/icons-material';
 
 
 const Perfil = ( ) =>{
