@@ -129,6 +129,7 @@ const RegisterForm = ()=>{
                 
                 <div className="register login">
                     <p>Aun ya tienes una cuenta? <Link className="link link-login" to="/register">Inicia sesion Ahora</Link> </p>
+                    <p>Aun ya tienes una cuenta? <Link className="link link-login" to="/login">Inicia sesion Ahora</Link> </p>
                 </div>
                 <Button className="submit" type="submit" variant="outlined" sx={{
                       marginTop: "2.5rem",
