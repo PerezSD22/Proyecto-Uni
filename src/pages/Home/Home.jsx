@@ -6,7 +6,7 @@ import PaymentInfo from "./ThreeSection/Paymen";
 
 
 import "./Home.css"
-const Inicio = () =>{
+const HomeIndex = () =>{
     return(
         <section className="home-container"> 
             <div className="background">
@@ -27,4 +27,4 @@ const Inicio = () =>{
     )
 }
 
-export default Inicio
+export default HomeIndex

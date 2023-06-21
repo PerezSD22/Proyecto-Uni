@@ -4,13 +4,14 @@ import "./App.css"
 import Perfil from "./pages/Perfil/Perfil";
 import NavMenu from "./Components/Header/navMenu";
 import ErrorPage from "./Components/404/404";
-import Inicio from "./pages/Home/Home";
+import HomeIndex from "./pages/Home/Home";
 import { useState, useEffect } from "react";
 import { getUserProfile } from "./services/Users/user-api";
 import axios from "axios";
 import LoginForm from "./pages/Login/Login";
-import RegisterForm from "./pages/Register/Register";
-import {SessionProvider} from './context';
+import UserRegisterForm from "./pages/UserRegister/UserRegister";
+import DriverFormRegister from "./pages/DriverRegister/DriverRegister";
+import InfoAccunt from "./pages/InfoAccount/InfoAccount";
 
 /* import Footer from "./Components/Footer/Footer"; */
 
@@ -42,14 +43,17 @@ function App() {
         <NavMenu auntenticador={isAuthenticated} user={user}/>
      
         <Routes>
-          <Route path='/'  element={<Inicio/>}/>
+          <Route path='/'  element={<HomeIndex/>}/>
           <Route path='/Perfil/:userId' element={<Perfil/>}  />
           <Route path='/Servicios' />
           <Route path='/Billetera' />
           <Route path='/Sobre' />
           <Route path='/login' element={<LoginForm/>} />
-          <Route path='/register' element={<RegisterForm/>} />
-
+          <Route path='/Register' element={<InfoAccunt/>}  />
+          <Route path='/Register/user'  element={<UserRegisterForm/>} />
+          <Route path='/Register/driver' element={<DriverFormRegister/>}/>
+           
+        
 
           <Route path='*'  element={<ErrorPage/>}/>
 
@@ -60,8 +64,4 @@ function App() {
   );
 }
 
-export default () => (
-  <SessionProvider>
-    <App />
-  </SessionProvider>
-);
+export default App

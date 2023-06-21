@@ -43,13 +43,13 @@ const options = [
   {
     login: {
      btnName: "Iniciar sesion",
-     url: "login"
+     url: "Login"
     },
   },
  {
   login:{
-    btnName: "Registrare",
-    url: "register"
+    btnName: "Registrate",
+    url: "Register"
   }
   },];
 /* const settings = ['Perfil', 'Movimientos', 'Dashboard', 'Logout']; */

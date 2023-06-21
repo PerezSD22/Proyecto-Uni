@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 
@@ -7,60 +7,14 @@ import { useForm } from "react-hook-form";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import "./Login.css"
-import { SessionContext } from "../../context";
+
 
 
 const LoginForm = ()=>{
     const {register, handleSubmit, formState:{errors}} = useForm()//registro
-    const [serverMessage, setServerMessage] = useState("")//mostrar un mensaje al usuario
-    const { updateSession } = useContext(SessionContext); // Use useContext instead of useState
-    
-    const navigate = useNavigate();
+
     const customSubmit =(data) =>{
-        const {user,password} = data;
-
-        
-        fetch('http://localhost:8000/api/login',{
-            method:'POST',
-            body: JSON.stringify({user,password}),
-            headers:{
-                'Content-Type':'application/json'
-            }
-        })
-        .then(response=>response.json())
-        .then(data =>{
-            // aqui manejo la logica respuesta del servidor
-            // console.log(data);
-            setServerMessage(data.messages)
-            if (data.status === 1) {
-                // Inicio sesion Exitoso
-                const userSession = {
-                    id:data.data.user.id,
-                    name:data.data.user.name,
-                    lastname:data.data.user.lastname,
-                    users:data.data.user.user,
-                    email:data.data.user.email,
-                    image:data.data.user.image,
-                    address:data.data.user.address,
-                    rol:data.data.user.rol.nombre
-                };
-                console.log(userSession);
-                updateSession(userSession);
-                setServerMessage(data.messages);
-               navigate("/Perfil/"+userSession.id)
-            //    navigate("/Perfil", { state: { id: userSession.id } });
-
-                
-           }else{
-               setServerMessage(data.messages)
-            }
-
-          
-
-        })
-        .catch(e=>console.error(e));
-
-       
+        console.log(data);
     }
    
     return <Box sx={{
@@ -99,8 +53,8 @@ const LoginForm = ()=>{
                     
                     <input  autocomplete="off" type="password"{...register('password', {required:true, minLength: 5, maxLength:15})} />
                     {errors.password?.type=== 'required' && <small className="error-messaje" >el campo no puede estar vacio</small>}
-                    {/* {errors.password?.type=== 'minLength' && <small className="error-messaje" >el campo debe tener almenos 5 caracteres</small>}
-                    {errors.password?.type=== 'maxLength' && <small className="error-messaje" >el campo no puede tener mas de 15 caracteres</small>} */}
+                    {errors.password?.type=== 'minLength' && <small className="error-messaje" >el campo debe tener almenos 5 caracteres</small>}
+                    {errors.password?.type=== 'maxLength' && <small className="error-messaje" >el campo no puede tener mas de 15 caracteres</small>} 
                     <label>contraseña</label>
                 </div>
                 
@@ -123,12 +77,14 @@ const LoginForm = ()=>{
                 </Button>
             </form>
 
-            <small className="error-messaje">{serverMessage}</small>
+
         </div>
         
        
 
     </Box>
 }
+
+
 
 export default LoginForm

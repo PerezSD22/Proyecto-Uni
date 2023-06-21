@@ -1,0 +1,117 @@
+.register-container{
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    min-height: 95vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 8%;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-user{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.register-user h3{
+    color: white;
+    font-weight: 600;
+    position: relative;
+}
+
+
+.register-user .personal-data{
+ position: absolute;
+  top: -40px;
+  left: 10px;
+  right: 0;
+  margin: 0 auto;
+  padding: 5px 10px;
+  
+ 
+    
+}
+
+.register-user .data-account{
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(20%);
+    padding: 5px 10px;
+
+}
+.login{
+    margin-left: 10%;
+}
+.register-container h2{
+    margin: 0 auto
+}
+.register{
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.button-container{
+    margin-bottom: 1.5rem;
+}
+
+.lista-opciones{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    max-width: 95%;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 2.36rem;
+
+    margin-top: 5rem;
+}
+.lista-opciones label{
+    font-size: 1.356rem;
+    font-weight: 600;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 6.5rem;
+}
+
+.lista-opciones select{
+    width: 100%;
+    background-color: #FFFFFF;
+    mix-blend-mode: normal;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    padding: 5px 20px;
+    border: none;
+    outline-color:#6278F7 ;
+    font-size: 1.323rem;
+    border-radius: 1px;
+   
+}
+
+
+
+.lista-opciones option{
+    width: 100%;
+    background-color: #FFFFFF;
+    mix-blend-mode: normal;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    padding: 35px 20px;
+    border: none;
+    outline-color:#6278F7 ;
+    font-size: 1.358rem;
+}
+
+.Complete-img{
+
+    width: 100%;
+    height: 100%;
+}

@@ -3,11 +3,11 @@ import "./button.css";
 import { Link } from "react-router-dom";
 
 const Button = (props) =>{
-    const {titulo, direccion, color} = props;
+    const {tittle, link} = props;
 
-    return <Link className="botton" to={direccion}
+    return <Link className="botton" to={link}
     >
-       <span className={`button-${color}`}>{titulo}</span> 
+       <span className={`button`}>{tittle}</span> 
     </Link>
 }
 export default Button;

@@ -4,9 +4,17 @@
     justify-content: space-around;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    
+    flex-direction: column;
 }
-
+.tittle-card{
+    color: #197988;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.39);
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    margin-bottom: 2.2rem;
+    font-weight: 900;
+    text-align: justify;
+}
 .card{
     width: 280px;
     height: 360px;
