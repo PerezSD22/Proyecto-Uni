@@ -5,8 +5,8 @@ import Button from "../../../Components/Button/botton";
 
 const AboutHome = () =>{
     const buttonProps = {
-        texto: 'Saber Más',
-        direccion: '/Sobre'
+        tittle: 'Saber Más',
+        link: '/Sobre'
 
     }
 
@@ -25,7 +25,7 @@ const AboutHome = () =>{
                 <img src="img/Taxi_vision-mision.png" alt="mision-vision" className="imagen-vision"/>
            </div>
            <div className="boton">
-            <Button titulo={buttonProps.texto} direccion={buttonProps.direccion} />
+            <Button tittle={buttonProps.tittle} link={buttonProps.link} />
            </div>
         </div>
        

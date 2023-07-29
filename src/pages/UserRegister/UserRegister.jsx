@@ -6,11 +6,14 @@ import "./register.css";
 import PersonalData from "./Personal-Data/PersonalData";
 import LocalData from "./Local-Data/LocalData";
 import DataUser from "./User-Data/User-Data";
+import { useAuth } from "../../Context/AutContext";
+import { Navigate } from "react-router-dom";
 
 const UserRegisterForm = () => {
   const {  handleSubmit } = useForm();
   const [activeStep, setActiveStep] = useState(0);
   const steps = ["Datos personales","Datos Locales", "Datos de cuenta", "Confirmar registro"];
+  const{isAuthenticated  } = useAuth()
 
   const handleNext = () => {
     setActiveStep((prevStep) => prevStep + 1);
@@ -19,6 +22,11 @@ const UserRegisterForm = () => {
   const handleBack = () => {
     setActiveStep((prevStep) => prevStep - 1);
   };
+
+  if(isAuthenticated){
+    return <Navigate to="/" />
+}
+
 
   const customSubmit = (data) => {
     const requestData = {
@@ -87,6 +95,12 @@ const UserRegisterForm = () => {
               ¿Ya tienes una cuenta?{" "}
               <Link className="link link-login" to="/login">
                 Inicia sesión ahora
+              </Link>{" "}
+            </p>
+            <p>
+              ¿Quieres seguir navegando?{" "}
+              <Link className="link link-login" to="/">
+                Regresa al Home ahora
               </Link>{" "}
             </p>
           </div>

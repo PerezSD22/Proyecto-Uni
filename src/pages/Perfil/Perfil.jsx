@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import "./Perfil.css"
-import { SessionContext } from '../../context';
+
 
 
 const Perfil = ( ) =>{
-    const {session} = useContext(SessionContext);
+    const {session} = useContext();
   
     const nombre = session ? session.name:"";
     const apellido = session ? session.lastname:"";

@@ -39,15 +39,7 @@ const DataUser= () =>{
                       <label>Correo electronico</label>
                   </div>
                
-              <div className="Form-inputs">
-                  
-                      
-                  <input  autocomplete="off" type="file"{...register('image', {required:true, minLength: 5, maxLength:15})} />
-                  {errors.image?.type=== 'required' && <small className="error-messaje" >el campo no puede estar vacio</small>}
-                  {errors.image?.type=== 'minLength' && <small className="error-messaje" >el campo debe tener almenos 5 caracteres</small>}
-                  {errors.image?.type=== 'maxLength' && <small className="error-messaje" >el campo no puede tener mas de 15 caracteres</small>}
-                  <label>Imagen </label>
-              </div>
+         
         </div>
     )
 }

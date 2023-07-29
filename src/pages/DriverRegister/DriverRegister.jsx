@@ -6,10 +6,19 @@ import PersonalData from "./Personal-Data/PersonalData";
 import CarData from "./CarData/CarData";
 import DataUser from "./User-Data/User-Data";
 
+import { useAuth } from "../../Context/AutContext";
+import { Navigate } from "react-router-dom";
+
 const DriverFormRegister = () => {
   const {  handleSubmit } = useForm();
   const [activeStep, setActiveStep] = useState(0);
   const steps = ["Datos personales","Datos del vehiculo", "Datos de cuenta", "Confirmar registro"];
+  const {isAuthenticated} = useAuth()
+
+  if(isAuthenticated){
+    return <Navigate to="/" />
+}
+
 
   const handleNext = () => {
     setActiveStep((prevStep) => prevStep + 1);
@@ -87,14 +96,18 @@ const DriverFormRegister = () => {
       
 
           <div className="register login">
-          <h3>Felicidades! te has registrado</h3>
-                <div className="Complete-img">
-                    <img  src="img/Complete.png" alt="complete" />
-                </div>
+        
             <p>
               ¿Ya tienes una cuenta?{" "}
               <Link className="link link-login" to="/login">
                 Inicia sesión ahora
+              </Link>{" "}
+
+            </p>
+            <p>
+              ¿Quieres seguir navegando?{" "}
+              <Link className="link link-login" to="/">
+                Regresa al Home ahora
               </Link>{" "}
             </p>
           </div>

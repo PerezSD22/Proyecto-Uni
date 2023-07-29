@@ -1,6 +1,10 @@
 import React from 'react'
 import "./InfoAccount.css"
 import Cards from '../../Components/Cards/cards'
+import { useAuth } from '../../Context/AutContext'
+import { Navigate } from 'react-router-dom'
+
+
 const InfoAccunt = () => {
   const cardContent = [
     {
@@ -28,6 +32,10 @@ const InfoAccunt = () => {
   
   ];
 
+  const{isAuthenticated } = useAuth()
+  if(isAuthenticated){
+    return <Navigate to="/" />
+}
 
   return (
   <section className='body-color'>

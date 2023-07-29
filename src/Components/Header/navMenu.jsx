@@ -203,12 +203,13 @@ function NavMenu() {
           </Box>
 
           <Box sx={{ flexGrow: 1,  display: { xs: 'none', md: 'flex' } , justifyContent: 'flex-end' }}>
-          {options.map((option) => {
+          {options.map((option, i) => {
             const {btnName, url} = option.login;
             return(
               <Button
+              key={i}
               component={Link}
-              to={url}
+              to={`/${url}`}
               sx={{ color: 'black' }}
               
 
