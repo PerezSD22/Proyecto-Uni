@@ -73,7 +73,6 @@
     justify-content: center;
     gap: 1.2rem;
     margin-bottom: 2.36rem;
-
     margin-top: 5rem;
 }
 .lista-opciones label{
@@ -81,7 +80,7 @@
     font-weight: 600;
     display: block;
     font-family: 'Montserrat', sans-serif;
-    margin-top: 6.5rem;
+    margin-top: 1.5rem;
 }
 
 .lista-opciones select{

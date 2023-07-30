@@ -1,4 +1,4 @@
-import {createBrowserRouter, RouterProvider } from "react-router-dom";
+import {createBrowserRouter,  RouterProvider } from "react-router-dom";
 
 import "./App.css"
 import Perfil from "./pages/Perfil/Perfil";
@@ -10,6 +10,7 @@ import LoginForm from "./pages/Login/Login";
 import UserRegisterForm from "./pages/UserRegister/UserRegister";
 import DriverFormRegister from "./pages/DriverRegister/DriverRegister";
 import InfoAccunt from "./pages/InfoAccount/InfoAccount";
+import Services from "./pages/ServicesPages/Services";
 
 import Layout from './Components/Header/Layaout';
 import ProtectedRoute from "./Routes/ProtectedRoutes";
@@ -26,16 +27,17 @@ const routes =createBrowserRouter( [
 
   },
   {
-    path:"/Perfil",
-    element: <Layout><Perfil/> </Layout>
-  },
-  {
     path:"/",
     element:<ProtectedRoute/>,
     children:[{
-      path: "/Servicios",
-      element: <Layout></Layout>
+      path: "/Perfil",
+      element: <Layout> <Perfil/></Layout>
     }]
+  },
+  {
+    path: "/Servicios",
+    element: <Layout><Services/></Layout>
+ 
   },
   { 
     path:"/Sobre",
@@ -49,8 +51,7 @@ const routes =createBrowserRouter( [
   {
     path:"/Register",
     element:<Layout><InfoAccunt/></Layout> ,
-   
-  },
+   },
   {
     path:"/Register/Driver",
     element:<DriverFormRegister/> 

@@ -60,6 +60,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const data = await Contrys();
       console.log(data);
+      return data;
     } catch (error) {
       console.log("Ha surgido un error: " + error);
     }

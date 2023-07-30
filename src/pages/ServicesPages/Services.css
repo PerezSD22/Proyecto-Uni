@@ -1,0 +1,12 @@
+.Container-Services{
+    display: flex;
+    width: 90%;
+    height: 250vh;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 5rem;
+   
+}

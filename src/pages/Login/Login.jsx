@@ -48,7 +48,11 @@
                             console.log(data.username, data.password);
                             console.log(response)
                             if(response.ok){
+                                console.log(response.ok)
+                                console.log("Login exitoso");
                                 return <Navigate to="/" />
+                            }else{
+                                console.log("login fallido")
                             }
                         }catch(error){
                             console.log("Ha surgido un error: " + error);
