@@ -6,8 +6,13 @@ import { Contrys } from "../services/GetServices/GetServices";
 export const GlobalContext = createContext(
 {
   isAuthenticated: false, //en este caso se coloca un propiedad para definir la autentificacion del usuario como false
+  getAccesToken: () =>" ",  //colocando el getter de accesToken en el contexto global
+  getRefreshToken: () => "", //colocando el getter del refresh token en el contexto global
 
 }
+
+
+
 
 );
 
@@ -28,24 +33,59 @@ export const useAuth = () =>{
 
 
 export const AuthProvider = ({ children }) => {
-  const [username, setUser] = useState(null);
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+ // manejo de tokes con use state
+  const [accessToken, setAccesToken] = useState(""); //manejo de AccessToken
+  // useState para manejar formularios:
+  const [formData, setFormData] = useState({});
+  
+  //funcion tipo getter para el accesToken
+  const getAccesToken = () =>{
+    return accessToken
+  }
+  const getRefreshToken = () =>{
+     const token = localStorage.getItem("token");
+     if (token) {
+      const {refreshToken} = JSON.parse(token);
+      return refreshToken
+     }
+  }
+
+  
+  //guardando tokes en el localStorage
+  const saveUser= (dataUser) =>{
+    setAccesToken(dataUser.accessToken);
 
 
-  const handleRegister = async (user) => { //logica para enviar datos a la api mediante el registro
-    const res = await registerRequest(user);
-    console.log(res.data);
-    setUser(res.data);
+    localStorage.setItem("token", JSON.stringify(dataUser.refreshToken))
+    setIsAuthenticated(true);
+  }
+
+
+  // seteando la informacion de los inputs en el use state
+  const updateFormData = (newData) => {
+    setFormData(prevData => ({ ...prevData, ...newData }));
+  };
+
+  const handleRegister = async () => { //logica para enviar datos a la api mediante el registro
+    const res = await registerRequest(formData);
+    console.log(res);
+  
+   
   };
 
   const handleLogin = async (user, password ) =>{
     try {
       const res = await loginRequest(user,password);
-      console.log(res);
+      const userData = res.data;
+
+      saveUser(userData);
+      console.log(userData);
       
-      if (res && res.data && res.data.token) {
-        setIsAuthenticated(true);
-        return { ok: true };  // Cambiar el estado a true cuando el login es exitoso y se recibe un token
+      if (res && userData && userData.token) {
+        setIsAuthenticated(true);// Cambiar el estado a true cuando el login es exitoso y se recibe un token
+        return { ok: true };  
       } else {
         
         throw new Error("Error de autenticación: No se recibió un token válido");  // Mostrar un mensaje de error o realizar alguna acción si la respuesta de la API no es válida
@@ -59,14 +99,20 @@ export const AuthProvider = ({ children }) => {
   const handleCountry = async () => {
     try {
       const data = await Contrys();
-      console.log(data);
+ 
       return data;
     } catch (error) {
       console.log("Ha surgido un error: " + error);
     }
   };
+
+
+
+
+
+
   return (
-    <GlobalContext.Provider value={{ username, handleLogin, handleRegister, isAuthenticated, handleCountry }}>
+    <GlobalContext.Provider value={{ handleLogin, handleRegister, isAuthenticated, handleCountry, getAccesToken, getRefreshToken, saveUser,updateFormData,setFormData,formData }}>
       {children}
     </GlobalContext.Provider>
   );

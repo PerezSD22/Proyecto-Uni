@@ -13,7 +13,8 @@ const UserRegisterForm = () => {
   const {  handleSubmit } = useForm();
   const [activeStep, setActiveStep] = useState(0);
   const steps = ["Datos personales","Datos Locales", "Datos de cuenta", "Confirmar registro"];
-  const{isAuthenticated  } = useAuth()
+  const{isAuthenticated, setFormData,formData,handleRegister  } = useAuth();
+  
 
   const handleNext = () => {
     setActiveStep((prevStep) => prevStep + 1);
@@ -28,20 +29,11 @@ const UserRegisterForm = () => {
 }
 
 
-  const customSubmit = (data) => {
-    const requestData = {
-      name: data.name,
-      lastname: data.lastname,
-      user: data.user,
-      email: data.email,
-      password: data.password,
-      imagen: data.image[0]['name'],
-      address: data.address,
-      id_rol: data.id_rol,
-    };
-
-    console.log(requestData);
-  };
+const customSubmit = (Data) => {
+  setFormData(Data);
+  handleRegister()
+  console.log(formData)
+};
 
   return (
     <Box
@@ -72,13 +64,14 @@ const UserRegisterForm = () => {
             <div className="register-user">
               <div className="Form-inputs Form-inputs-register">
                 <PersonalData />
+            
               </div>
             </div>
           )}
           {activeStep === 1 && (
             <div className="register-user">
               <div className="Form-inputs Form-inputs-register">
-                <LocalData />
+                <LocalData/>
               </div>
             </div>
           )}
@@ -90,12 +83,16 @@ const UserRegisterForm = () => {
             </div>
           )}
 
+      
+
           <div className="register login">
+        
             <p>
               ¿Ya tienes una cuenta?{" "}
               <Link className="link link-login" to="/login">
                 Inicia sesión ahora
               </Link>{" "}
+
             </p>
             <p>
               ¿Quieres seguir navegando?{" "}
@@ -109,13 +106,14 @@ const UserRegisterForm = () => {
               disabled={activeStep === 0}
               onClick={handleBack}
               sx={{ marginRight: "1rem" }}
+              type="button"
             >
               Atrás
             </Button>
             {activeStep < steps.length - 1 ? (
-              <Button variant="contained" onClick={handleNext}>
+              <a href="#"   onClick={handleNext}  className="button">
                 Siguiente
-              </Button>
+              </a>
             ) : (
               <Button type="submit" variant="contained">
                 Registrarse

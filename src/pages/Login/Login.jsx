@@ -9,11 +9,13 @@
     import { Navigate } from "react-router-dom";
 
 
+
     const LoginForm = ()=>{
+     
         const {register, handleSubmit, formState:{errors}} = useForm()//registro
         const [userName, setUserName] = useState('')
         const [password, setPassword] = useState('')
-        const{ handleLogin, isAuthenticated  } = useAuth();
+        const{ handleLogin, isAuthenticated, saveUser  } = useAuth();
 
         if(isAuthenticated){
             return <Navigate to="/" />
@@ -50,10 +52,18 @@
                             if(response.ok){
                                 console.log(response.ok)
                                 console.log("Login exitoso");
+                           
+                                const json = await response.json();
+                                if(json.body && json.body.accessToken && json.body.refreshToken){
+                                    saveUser(json)
+                                }
+
+
                                 return <Navigate to="/" />
                             }else{
                                 console.log("login fallido")
                             }
+                            
                         }catch(error){
                             console.log("Ha surgido un error: " + error);
                         }
