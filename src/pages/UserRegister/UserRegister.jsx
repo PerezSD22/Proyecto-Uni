@@ -111,9 +111,9 @@ const customSubmit = (Data) => {
               Atrás
             </Button>
             {activeStep < steps.length - 1 ? (
-              <a href="#"   onClick={handleNext}  className="button">
+              <Button variant="contained" onClick={handleNext}  type="button">
                 Siguiente
-              </a>
+              </Button>
             ) : (
               <Button type="submit" variant="contained">
                 Registrarse
