@@ -16,7 +16,8 @@
 .contenido-texo{
    text-align: center;
    width: 40%;
- 
+   font-size: 1.2em;
+   text-align: justify;
 }
 .boton{
     width: 80%;
@@ -24,10 +25,7 @@
     margin-top: -10%;
     
 }
-.contenido-texo{
-    font-size: 1.2em;
-    text-align: justify;
-}
+
 .Container h1{
     text-align: center;
     font-size: 7em;

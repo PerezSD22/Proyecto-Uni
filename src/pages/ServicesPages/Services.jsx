@@ -22,6 +22,7 @@ const Services = () => {
               "¿Necesitas un automóvil para desplazarte por la ciudad? Nuestro servicio de taxis es la solución ideal cuando necesitas un transporte seguro y conveniente en la ciudad. Contamos con conductores profesionales y amigables que te llevarán a tu destino de manera puntual y segura. ",
             img: "img/taxi-card.jpg",
             btn: "Pide uno ahora",
+            link: "https://www.youtube.com/"
         }
         },
         {
@@ -43,6 +44,7 @@ const Services = () => {
             "¿Necesitas enviar paquetes de manera segura y eficiente? Nuestro servicio de paquetería está aquí para ayudarte. Nos ocuparemos de tus envíos, ya sea que sean documentos importantes, regalos especiales o productos comerciales, y nos aseguraremos de que lleguen a su destino de manera rápida y confiable",
             img: "img/delivery.jpg",
             btn: "Enterate de más",
+            
         }
         }
       ];
@@ -52,7 +54,7 @@ const Services = () => {
   return (
     <section className='Container-Services'>
               {cardContent.map((cards, i) => {
-         const { tittleCard,tittle, content, img, btn } = cards.Tarjetas;
+         const { tittleCard,tittle, content, img, btn, link } = cards.Tarjetas;
         return (
           <ServicesCard
             key={i}
@@ -61,6 +63,7 @@ const Services = () => {
             content={content}
             img={img}
             btn={btn}
+            link={link}
           />
         );
       })}

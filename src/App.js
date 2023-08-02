@@ -62,6 +62,10 @@ const routes =createBrowserRouter( [
     element:<UserRegisterForm/>
   },
   {
+    path: "/Mapa",
+    element:<Layout></Layout>
+  },
+  {
     path:"*",
     element:<ErrorPage/>
   }

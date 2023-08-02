@@ -22,6 +22,7 @@ const ServicesHome = () => {
           "Pide uno de nuestros taxis ahora mismo y disfruta de un viaje unico a tu destino.",
         img: "img/taxi-card.jpg",
         btn: "Pide uno ahora",
+        link:"/Mapa"
     }
     },
     {
@@ -56,7 +57,7 @@ const ServicesHome = () => {
 
        <section className="services-container ">
        {cardContent.map((cards, i) => {
-         const { tittleCard,tittle, content, img, btn } = cards.Tarjetas;
+         const { tittleCard,tittle, content, img, btn, link } = cards.Tarjetas;
         return (
           <Cards
             key={i}
@@ -65,6 +66,7 @@ const ServicesHome = () => {
             content={content}
             img={img}
             btn={btn}
+            link={link}
           />
         );
       })}
