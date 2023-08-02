@@ -79,21 +79,26 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await loginRequest(user,password);
       const userData = res.data;
-
-      saveUser(userData);
-      console.log(userData);
+   
+    
+      console.log(res);
       
       if (res && userData && userData.token) {
         setIsAuthenticated(true);// Cambiar el estado a true cuando el login es exitoso y se recibe un token
-        return { ok: true };  
+        console.log("hola")
+        saveUser(userData);
+        return { OK: true };  
+        
+        
       } else {
         
         throw new Error("Error de autenticación: No se recibió un token válido");  // Mostrar un mensaje de error o realizar alguna acción si la respuesta de la API no es válida
     
       }
     } catch (error) {
+      
       console.log("Ha surgido un error: " + error);
-      return { ok: false };
+      return { OK: false };
     }
   };
   const handleCountry = async () => {

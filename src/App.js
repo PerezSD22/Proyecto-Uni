@@ -11,6 +11,7 @@ import UserRegisterForm from "./pages/UserRegister/UserRegister";
 import DriverFormRegister from "./pages/DriverRegister/DriverRegister";
 import InfoAccunt from "./pages/InfoAccount/InfoAccount";
 import Services from "./pages/ServicesPages/Services";
+import About from "./pages/About/About";
 
 import Layout from './Components/Header/Layaout';
 import ProtectedRoute from "./Routes/ProtectedRoutes";
@@ -41,7 +42,7 @@ const routes =createBrowserRouter( [
   },
   { 
     path:"/Sobre",
-    element:<Layout></Layout>
+    element:<Layout><About/></Layout>
 
   },
   {

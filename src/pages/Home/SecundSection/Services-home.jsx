@@ -51,7 +51,7 @@ const ServicesHome = () => {
     <section >
         <div className="info-container">
             <h1>Nuestros Servicios</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae perferendis ratione sequi alias incidunt veritatis! Consectetur eligendi veritatis nam ipsa culpa illum, architecto eos enim. Similique in minima excepturi deserunt!</p>
+            <p>En nuestra empresa, Mi Carrito Amarillo Seguro, nos enorgullece ofrecer una amplia gama de servicios diseñados para cubrir todas tus necesidades de movilidad y logística. Ya sea que estés buscando un medio de transporte confiable, rápido y seguro, o necesites enviar paquetes con eficiencia y cuidado, estamos aquí para ayudarte. Explora nuestros servicios a continuación:</p>
         </div>
 
        <section className="services-container ">

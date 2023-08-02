@@ -13,9 +13,13 @@
 
 
 }
-.contenido-texo{
-   text-align: center;
-   width: 40%;
+.contenido-texo p{
+    text-align: center;
+    width: 100%;
+    font-size: 1.01em;
+    text-align: justify;
+    
+   
  
 }
 .boton{

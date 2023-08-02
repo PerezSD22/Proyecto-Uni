@@ -19,7 +19,7 @@ const Services = () => {
             tittle:"Taxis",
             tittleCard: "Viaja seguro, Viaja con estilo",
             content:
-              "Nuestro servicio de taxis es la solución ideal cuando necesitas un transporte seguro y conveniente en la ciudad. Contamos con conductores profesionales y amigables que te llevarán a tu destino de manera puntual y segura. ",
+              "¿Necesitas un automóvil para desplazarte por la ciudad? Nuestro servicio de taxis es la solución ideal cuando necesitas un transporte seguro y conveniente en la ciudad. Contamos con conductores profesionales y amigables que te llevarán a tu destino de manera puntual y segura. ",
             img: "img/taxi-card.jpg",
             btn: "Pide uno ahora",
         }

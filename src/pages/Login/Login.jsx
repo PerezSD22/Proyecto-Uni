@@ -6,7 +6,7 @@
     import Box from '@mui/material/Box';
     import Button from '@mui/material/Button';
     import "./Login.css"
-    import { Navigate } from "react-router-dom";
+    import { Navigate, useNavigate } from "react-router-dom";
 
 
 
@@ -16,6 +16,7 @@
         const [userName, setUserName] = useState('')
         const [password, setPassword] = useState('')
         const{ handleLogin, isAuthenticated, saveUser  } = useAuth();
+        const navigate = useNavigate();
 
         if(isAuthenticated){
             return <Navigate to="/" />
@@ -45,21 +46,20 @@
                 <form 
                     onSubmit={handleSubmit(async (data) => {
                         try{
-                            console.log(data)
+                            
                             const response = await handleLogin(data.username, data.password);
-                            console.log(data.username, data.password);
-                            console.log(response)
-                            if(response.ok){
-                                console.log(response.ok)
+                          
+                            if(response.OK){
+                                console.log(response.OK)
                                 console.log("Login exitoso");
                            
                                 const json = await response.json();
                                 if(json.body && json.body.accessToken && json.body.refreshToken){
-                                    saveUser(json)
+                                   
                                 }
 
 
-                                return <Navigate to="/" />
+                                return navigate("/")
                             }else{
                                 console.log("login fallido")
                             }

@@ -1,0 +1,57 @@
+.Colaborador {
+    width: 320px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+
+.Colaborador .Encabezado {
+   background-color: #6278F7;
+    border-radius: 10px 10px 0 0;
+   
+}
+
+.Colaborador img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    position: relative;
+    bottom: -50px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.26);
+    transform: translateX(50%);
+    background-size: cover;    
+}
+
+.Colaborador .Info{
+    background: #FFFFFF;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 0 0 10px 10px;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    min-height: 100px;
+    font-family: "Monserrat", sans-serif;
+    width: 100%;
+    
+}
+
+.Colaborador .Info h4{
+    color: #6278F7;
+    font-size: 1.35em;
+    line-height: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    transform: translateX(25%);
+}
+
+.Colaborador .Info h5{
+    color: #212121;
+    font-size: 1.2em;
+    padding: 0 24px;
+    line-height: 22px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 1.2rem;
+}

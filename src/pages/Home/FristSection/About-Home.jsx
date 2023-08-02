@@ -16,9 +16,9 @@ const AboutHome = () =>{
         <div className="Container">
              <h1 > ¿Quiénes somos? </h1>
            <div className="contenido-texo">
-                <p className="texto-vision">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel laborum facilis temporibus soluta totam, est aperiam modi unde sequi sint provident rerum cupiditate quibusdam inventore quas omnis enim suscipit aliquid?</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint tempore optio maiores sed, assumenda autem, perferendis illo nesciunt accusantium eos similique dolor laudantium culpa atque aperiam quae doloremque in. Provident.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint tempore optio maiores sed, assumenda autem, perferendis illo nesciunt accusantium eos similique dolor laudantium culpa atque aperiam quae doloremque in. Provident.</p>
+                <p >Mi Carrito Amarillo Seguro somos un equipo de expertos comprometidos en ofrecer seguros automotrices confiables y personalizados. Tu seguridad y tranquilidad son nuestra prioridad, y estamos aquí para ayudarte en cada paso del camino.</p>
+                <br /> 
+                <p>¡Confía en nosotros para protegert mientras tu disfrutar de la paz mental que mereces! No dudes en contactarnos para obtener más información o solicitar una cotización personalizada. Estamos ansiosos por ser parte de tu viaje en carretera.</p>
            </div>
            
            <div className="contenido-imagen">

@@ -1,0 +1,34 @@
+
+.Card__Content{
+    width: 350px;
+    height: 450px;
+    background: rgb(254,254,254);
+    background: linear-gradient(-120deg, rgb(231, 193, 122) 0%, rgba(254,182,113,1) 13%, rgba(247,140,52,1) 58%, rgba(241,102,9,1) 100%);
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: all .6s ease-in;
+   
+}
+.Card__Content:hover{
+    transform: translateY(-20px);
+}
+.Card__tittle{
+    width: 30%;
+    margin: 0 auto;
+    color: white;
+    text-shadow:  0px 0px 10px rgba(0, 0, 0, 0.5) ;
+    font-size: 1.3em;
+}
+.Card__Content__text{
+    width: 90%;
+    margin: 0 auto;
+    color: white;
+    text-shadow:  0px 5px 10px rgba(0, 0, 0, 0.685) ;
+    font-size: 1.15em;
+    margin-top: 1.2rem;
+    font-weight: 500;
+    text-align: justify;
+}
