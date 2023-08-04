@@ -49,13 +49,13 @@
                             
                             const response = await handleLogin(data.username, data.password);
                           
-                            if(response.OK){
-                                console.log(response.OK)
+                            if(response.ok){
+                                console.log(response.ok)
                                 console.log("Login exitoso");
                            
                                 const json = await response.json();
-                                if(json.body && json.body.accessToken && json.body.refreshToken){
-                                   
+                                if(json.body && json.body.Token && json.body.refreshToken){
+                                   saveUser()
                                 }
 
 

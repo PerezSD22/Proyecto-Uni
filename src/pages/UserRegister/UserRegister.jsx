@@ -42,7 +42,7 @@ const customSubmit = (Data) => {
         flexDirection: "row",
         justifyContent: "center",
         width: "100%",
-        height: "auto",
+        height:{ xs: '120vh', md: 'auto' },
         flexWrap: "wrap",
         position: "absolute",
         background: "#eea837",

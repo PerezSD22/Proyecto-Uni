@@ -49,3 +49,41 @@
 .info-account p{
     font-size: 1.2em;
 }
+
+@media (max-width:810px){
+
+    .info-account{
+        display: flex;
+        justify-content: center;
+        flex-direction: column ;
+        align-items: center;
+        width: 80%;
+        text-align: justify;
+        margin: 0 auto;
+        margin-bottom: 2.5rem;
+    
+    }
+    .welcom{
+        margin-bottom: 20px;
+    }
+    .info-account-card{
+        margin-left: 80px;
+    }
+}
+@media (max-width:475px){
+    .info-account{
+        display: flex;
+        justify-content: center;
+        flex-direction: column ;
+        align-items: center;
+        width: 80%;
+        text-align: justify;
+        margin: 0 auto;
+        margin-bottom: 2.5rem;
+    
+    }
+    .welcom{
+        margin-bottom: 20px;
+    }
+    
+}

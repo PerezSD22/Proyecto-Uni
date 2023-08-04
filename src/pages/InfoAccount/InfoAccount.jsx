@@ -44,7 +44,8 @@ const InfoAccunt = () => {
             <div className="info-account">
               <h2>Nuestras cuentas</h2>
 
-              <p>¡Bienvenido(a) a las cuentas  en Mi Carrito Amarillo Seguro!</p>
+              <p className='welcom'>¡Bienvenido(a) a las cuentas  en Mi Carrito Amarillo Seguro!</p>
+             
               <p>Nuestras Cuentas, Cliente y conductor brindan acceso a una variedad de funciones y beneficios diseñados para hacer que tu experiencia sea más conveniente y satisfactoria, podrás gestionar tus servicios, realizar pagos, acceder a información importante, obtendrás recursos que te ayudarán a administrar tu trabajo de manera eficiente y mantener una comunicación efectiva con nosotros.   </p>
             </div>
           </div>

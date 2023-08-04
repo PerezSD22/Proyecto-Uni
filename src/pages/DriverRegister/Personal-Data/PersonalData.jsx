@@ -37,7 +37,7 @@ const PersonalData = () =>{
             
                 </div>
         
-                <div className='lista-opciones'>
+                <div className='lista-opciones driver-pais'>
                         <label>País</label>
                         <select >
                             <option >Venezuela</option>

@@ -32,13 +32,7 @@ const pages =[
     url: "Sobre"
   }
   },
-  {
-    item:{
-      id:4,
-      titulo: "Pago",
-      url:"Pagos"
-    }
-  },
+
 ]
 /* const pages = ['Perfil', 'Servicios', 'Billetera','Sobre']; */
 const options = [
@@ -146,9 +140,14 @@ function NavMenu() {
                   </Typography>
                 </MenuItem>
                 )
-              })}
-              <Divider variant='middle' />
-              {options.map((option,i) => {
+              })} 
+              { isAuthenticated ? false:
+                   <Divider variant='middle' />
+              }
+            
+              { isAuthenticated ? false: 
+              
+                options.map((option,i) => {
                 const {btnName, url} = option.login;
                 return(
                 <MenuItem key={i} onClick={handleCloseNavMenu}>

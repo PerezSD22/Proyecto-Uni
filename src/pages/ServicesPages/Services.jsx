@@ -22,7 +22,7 @@ const Services = () => {
               "¿Necesitas un automóvil para desplazarte por la ciudad? Nuestro servicio de taxis es la solución ideal cuando necesitas un transporte seguro y conveniente en la ciudad. Contamos con conductores profesionales y amigables que te llevarán a tu destino de manera puntual y segura. ",
             img: "img/taxi-card.jpg",
             btn: "Pide uno ahora",
-            link: "https://www.youtube.com/"
+            link: "https://perezsd22.github.io/Geolocalizacion/"
         }
         },
         {

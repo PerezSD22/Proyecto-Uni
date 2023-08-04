@@ -42,8 +42,128 @@
 .imagen-vision{
    border-radius: 30px ;
    
+   
 }
 .imagen-vision{
     box-shadow: 14px 12px 15px rgba(71, 70, 70, 0.3);
 
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .contenido-texo{
+        width: 100%;
+        font-size: 1.2em;
+        margin: 0 auto;
+        margin-left: 20px;
+      
+    }
+    .Container h1{
+        text-align: center;
+        font-size: 4em;
+        width: 100%;
+        font-family: 'Dancing Script', cursive;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: url("./img/text-bg.jpg");
+        background-position: 0% -10%;
+        font-weight: 900;
+    
+    }
+
+    .imagen-vision{
+        width: 500px;
+        height: 500px;
+        margin-bottom: 4rem;
+    
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 728px) {
+    .contenido-texo{
+        width: 70%;
+        font-size: 1.02em;
+        margin: 0 auto;
+        margin-left: 50px;
+      
+    }
+    .Container h1{
+        text-align: center;
+        font-size: 3em;
+        width: 100%;
+        font-family: 'Dancing Script', cursive;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: url("./img/text-bg.jpg");
+        background-position: 0% -10%;
+        font-weight: 900;
+    
+    }
+
+    .imagen-vision{
+        width: 300px;
+        height: 300px;
+        margin-bottom: 4rem;
+    
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1280px) {
+    .contenido-texo{
+        width: 100%;
+        font-size: 1.2em;
+        margin: 0 auto;
+        margin-left: 20px;
+      
+    }
+    .Container h1{
+        text-align: center;
+        font-size: 4em;
+        width: 100%;
+        font-family: 'Dancing Script', cursive;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: url("./img/text-bg.jpg");
+        background-position: 0% -10%;
+        font-weight: 900;
+    
+    }
+
+    .imagen-vision{
+        width: 500px;
+        height: 500px;
+        margin-bottom: 4rem;
+    
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+    .contenido-texo{
+        width: 100%;
+        font-size: 1.2em;
+        margin: 0 auto;
+        margin-left: 20px;
+      
+    }
+    .Container h1{
+        text-align: center;
+        font-size: 4em;
+        width: 100%;
+        font-family: 'Dancing Script', cursive;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: url("./img/text-bg.jpg");
+        background-position: 0% -10%;
+        font-weight: 900;
+    
+    }
+
+    .imagen-vision{
+        width: 500px;
+        height: 500px;
+        margin-bottom: 4rem;
+    
+    }
 }

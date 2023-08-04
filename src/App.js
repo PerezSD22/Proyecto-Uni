@@ -63,7 +63,7 @@ const routes =createBrowserRouter( [
   },
   {
     path: "/Mapa",
-    element:<Layout></Layout>
+    element:"https://perezsd22.github.io/Geolocalizacion/"
   },
   {
     path:"*",

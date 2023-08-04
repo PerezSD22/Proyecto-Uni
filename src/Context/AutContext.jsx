@@ -79,11 +79,11 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await loginRequest(user,password);
       const userData = res.data;
-   
+    
     
       console.log(res);
       
-      if (res && userData && userData.token) {
+      if (res && userData &&  userData.data[0].Token) {
         setIsAuthenticated(true);// Cambiar el estado a true cuando el login es exitoso y se recibe un token
         console.log("hola")
         saveUser(userData);

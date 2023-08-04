@@ -74,19 +74,19 @@ const About = () => {
     <section className='About__Container'>
         <div className="Container">
              <h1 > ¿Quiénes somos? </h1>
-           <div className="contenido-texo about-content">
+           <div className="about-content">
                 <p className="About-Text">Mi Carrito Amarillo Seguro somos un equipo de expertos comprometidos en ofrecer seguros automotrices confiables y personalizados. Tu seguridad y tranquilidad son nuestra prioridad, y estamos aquí para ayudarte en cada paso del camino.</p>
                 <p className="About-Text">¡Confía en nosotros para proteger tu vehículo y disfrutar de la paz mental que mereces! No dudes en contactarnos para obtener más información o solicitar una cotización personalizada. Estamos ansiosos por ser parte de tu viaje en carretera.</p>
             
            </div>
            
-           <div className="contenido-imagen about-img">
+           <div className="about-img">
                 <img src="img/Taxi-About.jpg" alt="mision-vision" className="imagen-vision"/>
            </div>
                 
         </div>
 
-        <div className='About__Vision-container Container '>
+        <div className='About__Vision-container  '>
             <h1>Nuestra misión y visión</h1>
             <p className='About__Vision-text'>Nuestro objetivo es liderar el sector, superando las expectativas de nuestros clientes al ofrecer opciones de transporte y entrega eficientes que marquen la diferencia. En Mi Carrito Amarillo Seguro, nos enorgullecemos de ser más que solo un proveedor de servicios, somos aliados en el éxito de quienes confían en nosotros.</p>
             <div className="Card__About_container">
@@ -138,7 +138,7 @@ const About = () => {
         </div>
         <div className='Colaborator-Team-detail Logistica'>
             <h2>Logistica</h2>
-            <div className="ProgramerTeam">
+            <div className="ProgramerTeam logic-team">
                { 
                 leadTeam.map((colaborators, i ) =>{
                     const {name,jobTitle,image,color } = colaborators.colaborator

@@ -89,8 +89,8 @@
     mix-blend-mode: normal;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
     padding: 5px 20px;
-    border: none;
-    outline-color:#6278F7 ;
+    border: 1px solid #6278F7;
+
     font-size: 1.323rem;
     border-radius: 1px;
    
@@ -113,4 +113,51 @@
 
     width: 100%;
     height: 100%;
+}
+.driver-pais label{
+    font-size: 1.356rem;
+    font-weight: 600;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 7.5rem;
+}
+@media (max-width:475px){
+    .register-container{
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+        min-height: 95vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-top: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .login{
+        margin-left: 0px;
+    }
+    .driver-pais label{
+        font-size: 1.356rem;
+        font-weight: 600;
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 7.5rem;
+    }
+    
+}
+
+@media (max-width:810px){
+ 
+    .login{
+        margin-left: 0px;
+    }
+    .driver-pais label{
+        font-size: 1.356rem;
+        font-weight: 600;
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 7.5rem;
+    }
+    
 }

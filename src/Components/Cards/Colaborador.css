@@ -55,3 +55,23 @@
     margin: 0;
     margin-bottom: 1.2rem;
 }
+@media (max-width:475px){
+    .Colaborador {
+        width: 100%;
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+}
+@media (max-width:1200px){
+    .Colaborador {
+        width: 300px;
+        margin-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+}
