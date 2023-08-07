@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
-import{loginRequest, registerRequest} from "../services/Users/Login-Services";
+import{loginRequest, requestRegisterCustomer, requestRegisterCustomerUser} from "../services/Users/Login-Services";
 import { Contrys } from "../services/GetServices/GetServices";
+
 
 // se crea un context, el cualpuede dejarse vacio o crear un arreglo de objetos de tipo clave -> valor
 export const GlobalContext = createContext(
@@ -69,8 +70,42 @@ export const AuthProvider = ({ children }) => {
   };
 
   const handleRegister = async () => { //logica para enviar datos a la api mediante el registro
-    const res = await registerRequest(formData);
-    console.log(res);
+    try{
+      setFormData(formData);
+      //Customer 
+      const formCustomer = {
+        "name":formData.name,
+        "lastname":formData.lastname,
+        "address":formData.address,
+      }
+      console.log(formCustomer);
+      try{
+        const res = await requestRegisterCustomer(formCustomer)
+      console.log("Respuesta del SERVIDOR:", res.data);
+      }catch (e){
+        console.error(e);
+      }
+
+  const formCustomerUser = {
+    "user":formData.user,
+    "password":formData.password,
+    "email":formData.email,
+    "countries":formData.contries,
+  }
+
+  try{
+    const res = await requestRegisterCustomerUser(formCustomerUser)
+  console.log("Respuesta del SERVIDOR Usuario:");
+  console.log( res.data);
+  }catch (e){
+    console.error(e);
+  }
+
+
+
+    }catch(error){
+      console.error(error);
+    }
   
    
   };
@@ -79,16 +114,13 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await loginRequest(user,password);
       const userData = res.data;
-    
-    
-      console.log(res);
-      
-      if (res && userData &&  userData.data[0].Token) {
+          
+      if (res && userData && userData.data.Token ) {
         setIsAuthenticated(true);// Cambiar el estado a true cuando el login es exitoso y se recibe un token
-        console.log("hola")
+        console.log(userData.data.Token)
         saveUser(userData);
         return { OK: true };  
-        
+
         
       } else {
         
@@ -111,14 +143,15 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-
-
-
-
-
   return (
     <GlobalContext.Provider value={{ handleLogin, handleRegister, isAuthenticated, handleCountry, getAccesToken, getRefreshToken, saveUser,updateFormData,setFormData,formData }}>
       {children}
     </GlobalContext.Provider>
   );
 };
+
+/* 
+const res = await registerRequest(formData);
+    console.log("En El Contexto de Registro de Customer"+res);
+
+*/

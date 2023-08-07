@@ -31,8 +31,32 @@ const UserRegisterForm = () => {
 
 const customSubmit = (Data) => {
   setFormData(Data);
-  handleRegister()
-  console.log(formData)
+  handleRegister(Data)
+  //console.log(formData)
+/*
+  const formCustomer = {
+    "name":formData.name,
+    "lastname":formData.lastname,
+    "address":formData.address
+  }
+
+  const formCustomerUser = {
+    "user":formData.user,
+    "password":formData.password,
+    "email":formData.email,
+    "countries":formData.contries,
+  }
+  console.log("---------Datos del Formulario--------------------");
+  console.log("Datos del Cliente");
+  console.log("-----------------------------");
+  console.log(JSON.stringify(formCustomer));
+  console.log("-----------------------------");
+  console.log("-----------------------------");
+  console.log("Datos del Cliente Usuario");
+  console.log("-----------------------------");
+  console.log(JSON.stringify(formCustomerUser));
+  console.log("-----------------------------");
+*/
 };
 
   return (
@@ -47,9 +71,7 @@ const customSubmit = (Data) => {
         position: "absolute",
         background: "#eea837",
         alignItems: "center",
-      }}
-      component="section"
-    >
+      }}component="section">
       <div className="Form-Container register-container">
         <h2>Registrarse</h2>
         <Stepper activeStep={activeStep} alternativeLabel sx={{width:"100%"}}>
