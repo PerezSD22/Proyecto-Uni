@@ -96,7 +96,42 @@
    
 }
 
-
+.register-user h3{
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+    margin-top: 5rem;
+}
+.register-user p{
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+.register-user .small{
+    font-size: 1.03em;
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+  
+    font-weight: 600;
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+.register-user .small-2{
+    font-size: 1.03em;
+    width: 100%;
+    text-align: center; 
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
 
 .lista-opciones option{
     width: 100%;

@@ -32,31 +32,7 @@ const UserRegisterForm = () => {
 const customSubmit = (Data) => {
   setFormData(Data);
   handleRegister(Data)
-  //console.log(formData)
-/*
-  const formCustomer = {
-    "name":formData.name,
-    "lastname":formData.lastname,
-    "address":formData.address
-  }
 
-  const formCustomerUser = {
-    "user":formData.user,
-    "password":formData.password,
-    "email":formData.email,
-    "countries":formData.contries,
-  }
-  console.log("---------Datos del Formulario--------------------");
-  console.log("Datos del Cliente");
-  console.log("-----------------------------");
-  console.log(JSON.stringify(formCustomer));
-  console.log("-----------------------------");
-  console.log("-----------------------------");
-  console.log("Datos del Cliente Usuario");
-  console.log("-----------------------------");
-  console.log(JSON.stringify(formCustomerUser));
-  console.log("-----------------------------");
-*/
 };
 
   return (
@@ -104,7 +80,23 @@ const customSubmit = (Data) => {
               </div>
             </div>
           )}
+           {activeStep === 3 && (
+            <div className="register-user">
+              <h3>Felicidades! </h3>
+              <br />
+              <p>has completado tu registro!</p>
+              <br />
+              <p className="small">ahora puedes logearte 
+              </p>  
+              <p className="small-2">
+             
+              <Link className="link link-login" to="/login">
+                Inicia sesión ahora
+              </Link>{" "}
 
+            </p>
+            </div>
+          )}
       
 
           <div className="register login">

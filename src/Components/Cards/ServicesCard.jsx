@@ -1,9 +1,10 @@
 import React from 'react'
 import "./ServicesCard.css"
 import Button from '../Button/botton'
+import { useAuth } from '../../Context/AutContext'
 const ServicesCard= (props) => {
     const {tittle, content,btn,link,img} = props
-
+    const {isAuthenticated} = useAuth
   return (
     <div className="Card__Container__services">
     <div className='Content_services_Container'>
@@ -14,7 +15,7 @@ const ServicesCard= (props) => {
            {content}
         </p>
         <div className='Botton-Services'>
-            <Button tittle={btn} link={link} type='typeButton' />
+           { isAuthenticated ? <Button tittle={btn} link={link} type='typeButton' />: null}
         </div>
   
     </div>

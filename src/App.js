@@ -62,8 +62,13 @@ const routes =createBrowserRouter( [
     element:<UserRegisterForm/>
   },
   {
-    path: "/Mapa",
-    element:"https://perezsd22.github.io/Geolocalizacion/"
+    path:"/",
+    element:<ProtectedRoute/>,
+    children:[{
+      path: "https://perezsd22.github.io/Geolocalizacion/"
+     
+    }]
+
   },
   {
     path:"*",

@@ -12,6 +12,7 @@ const ServicesHome = () => {
           "Encuentra los mejores autos para alquilar y vive una experiencia única. Desde compactos hasta lujosos, tenemos el vehículo perfecto para tus necesidades.",
         img: "img/alquiler.jpg",
         btn: "Alquila ahora",
+        link:"/Servicios"
       },
     },
    {
@@ -22,7 +23,7 @@ const ServicesHome = () => {
           "Pide uno de nuestros taxis ahora mismo y disfruta de un viaje unico a tu destino.",
         img: "img/taxi-card.jpg",
         btn: "Pide uno ahora",
-        link:"/Mapa"
+        link:"/Servicios"
     }
     },
     {
@@ -33,6 +34,7 @@ const ServicesHome = () => {
        " Que el hambre no sea un problema, aprovecha nuestro servicios especializados en entrega de comida.",
         img: "img/food_delivery.jpg",
         btn: "Enterate de más",
+        link:"/Servicios"
     } 
       
     },
@@ -44,6 +46,7 @@ const ServicesHome = () => {
         "Pide lo que sea, en donde sea, cuando sea. Tenemos los repartidores mas confiables y mas rapido del mercado",
         img: "img/delivery.jpg",
         btn: "Enterate de más",
+        link:"/Servicios"
     }
     }
   ];
